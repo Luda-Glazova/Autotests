@@ -23,7 +23,7 @@ class PythonOrgSearch(unittest.TestCase):
         # Chromedriver
 
     def setUp(self):
-        ser = Service('chromedriver.exe')
+        ser = Service('C:/Users/Artur/PycharmProjects/Autotests/chromedriver.exe')
         op = webdriver.ChromeOptions()
         self.cd = webdriver.Chrome(service=ser, options=op)
 
@@ -57,6 +57,13 @@ class PythonOrgSearch(unittest.TestCase):
         driver.get("https://stage.www.vtbconnect.ru/trade/3612")
         time.sleep(2)
         _buttons.edit_trade(self, driver)
+        time.sleep(5)
+        driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[1]/span/div/span/div/div/button').click()
+        time.sleep(2)
+        pyautogui.write('C:/path_to_file')
+        time.sleep(1)
+        pyautogui.press('enter')
+        time.sleep(2)
         driver.find_element(By.XPATH, '/htm11l/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[3]/div[1]').click()
         time.sleep(5)
         driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[3]/div[1]').click()
