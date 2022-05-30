@@ -66,6 +66,8 @@ class PythonOrgSearch(unittest.TestCase):
         time.sleep(2)
         driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[3]/div[1]').click()
         time.sleep(5)
+        driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[3]/div[1]').click()
+        time.sleep(5)
         _buttons.save_changes(self, driver)
         #_edit_trades.edit_specs(self, driver)
         #_buttons.save_changes(self, driver)
