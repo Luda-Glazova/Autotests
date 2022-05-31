@@ -246,11 +246,10 @@ class Trade_constructor(object):
     def spec_download(self, driver):
         driver.find_element(By.XPATH,
                             '//*[@id="root"]/div/div/div/div[2]/div[2]/div/div/div/form/div[1]/div[2]/div/div[1]/span/div/span/div/div/button').click()
-        time.sleep(5)
-        pyautogui.click(x=411, y=424)  # Вписываем имя файла в строку "Имя файла"
+        time.sleep(2)
         pyautogui.write(r'C:\Users\Saya\Desktop\specifications_form_3st.xls')
-        pyautogui.click(x=716, y=458)  # Кнопка открыть
-        time.sleep(5)
+        time.sleep(1)
+        pyautogui.press('enter')
 
     # Добавление 2х дополнительных адресов
     def additional_addresses(self, driver):
@@ -324,18 +323,16 @@ class Trade_constructor(object):
     # Добавление файлов(требование к предмету закупки и форма КП)
     def add_docs(self, driver):
         driver.find_element(By.CSS_SELECTOR, '.form_file:nth-child(1) .ant-btn:nth-child(2)').click()
-        time.sleep(5)
-        pyautogui.click(x=411, y=424)  # Вписываем имя файла в строку "Имя файла"
-        pyautogui.write(r'C:\Users\Saya\Desktop\specifications_form_3st.xls')
-        pyautogui.click(x=716, y=458)  # Кнопка открыть
-        time.sleep(3)
+        time.sleep(2)
+        pyautogui.write(r'C:\Users\Saya\Desktop\form.xlsx')
+        time.sleep(1)
+        pyautogui.press('enter')
 
         driver.find_element(By.CSS_SELECTOR, '.form_file:nth-child(2) .ant-btn:nth-child(2)').click()
-        time.sleep(5)
-        pyautogui.click(x=411, y=424)  # Вписываем имя файла в строку "Имя файла"
-        pyautogui.write(r'C:\Users\Saya\Desktop\specifications_form_3st.xls')
-        pyautogui.click(x=716, y=458)  # Кнопка открыть
-        time.sleep(3)
+        time.sleep(2)
+        pyautogui.write(r'C:\Users\Saya\Desktop\require.xlsx')
+        time.sleep(1)
+        pyautogui.press('enter')
 
 # if __name__ == "__Main__":
 # unittest.main()

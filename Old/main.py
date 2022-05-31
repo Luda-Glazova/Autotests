@@ -46,6 +46,7 @@ class PythonOrgSearch(unittest.TestCase):
         _links = Links
         _buttons = Buttons
         _edit_trades = Edit_trades
+        _edit_constructor = Edit_constructor
         _change_status = Change_status
         _trade_links = {}
 
@@ -57,17 +58,12 @@ class PythonOrgSearch(unittest.TestCase):
         driver.get("https://stage.www.vtbconnect.ru/trade/3612")
         time.sleep(2)
         _buttons.edit_trade(self, driver)
-        time.sleep(5)
-        driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[1]/span/div/span/div/div/button').click()
         time.sleep(2)
-        pyautogui.write('C:/path_to_file')
-        time.sleep(1)
-        pyautogui.press('enter')
-        time.sleep(2)
-        driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[3]/div[1]').click()
-        time.sleep(5)
-        driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[3]/div[1]').click()
-        time.sleep(5)
+        driver.find_element(By.CSS_SELECTOR, 'div:nth-child(4) > div > svg').click()
+        time.sleep(3)
+        driver.find_element(By.CSS_SELECTOR, 'div:nth-child(3) > div > svg').click()
+        time.sleep(3)
+        _edit_constructor.edit_contact(self, driver)
         _buttons.save_changes(self, driver)
         #_edit_trades.edit_specs(self, driver)
         #_buttons.save_changes(self, driver)

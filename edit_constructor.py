@@ -33,7 +33,11 @@ class Edit_constructor(object):
 
     # Удаление второй и третьей спецификации
     def delete_edit_spec(self, driver):
+        time.sleep(2)
+        driver.find_element(By.CSS_SELECTOR, 'div:nth-child(4) > div > svg').click()
+        time.sleep(2)
         driver.find_element(By.CSS_SELECTOR, 'div:nth-child(3) > div > svg').click()
+        time.sleep(2)
 
     # Добавление нового адреса при редактировании
     def add_addres(self, driver):

@@ -30,6 +30,5 @@ class Edit_trades(object):
         driver.get(get_trade_number(5))
         _buttons.edit_trade(self, driver)
         _edit_constructor.delete_edit_spec(self, driver)
-        _edit_constructor.delete_edit_spec(self, driver)
         _edit_constructor.edit_contact(self, driver)
         _buttons.save_changes(self, driver)
