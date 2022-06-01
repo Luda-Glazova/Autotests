@@ -63,6 +63,8 @@ class PythonOrgSearch(unittest.TestCase):
         time.sleep(3)
         driver.find_element(By.CSS_SELECTOR, 'div:nth-child(3) > div > svg').click()
         time.sleep(3)
+        _edit_constructor.edit_copy_spec(self, driver)
+        _edit_constructor.edit_third_spec(self, driver)
         _edit_constructor.edit_contact(self, driver)
         _buttons.save_changes(self, driver)
         #_edit_trades.edit_specs(self, driver)

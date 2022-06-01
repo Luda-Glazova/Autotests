@@ -57,42 +57,45 @@ class Edit_constructor(object):
     def edit_third_spec(self, driver):
         # Добавление третьей спецификации (кнопка Добавить)
         # driver.find_element(By.CSS_SELECTOR, '.button:nth-child(1)').click() (Создание копии первой спеки, если это необходимо)
+        time.sleep(2)
         driver.find_element(By.CSS_SELECTOR, '.button:nth-child(2)').click()
 
         # Заполнение поля: "Количество"
-        Count3_3 = driver.find_element(By.CSS_SELECTOR, '[id=items-3-amount]')
+        time.sleep(2)
+        Count3_3 = driver.find_element(By.XPATH, '//div[4]/div[2]/div/div[2]/div/div/div/span/div/input')
         Count3_3.send_keys("5")
 
         # Заполнение поля: "Наименование"
-        Name3_3 = driver.find_element(By.CSS_SELECTOR, '[id=items-3-name]')
+        Name3_3 = driver.find_element(By.XPATH, '//div[4]/div[2]/div[2]/div/div/div/span/div/textarea')
         Name3_3.send_keys("Отредактирован")
 
         # Заполнение поля: "Описание"
-        Description3_3 = driver.find_element(By.CSS_SELECTOR, '[id=items-3-description]')
+        Description3_3 = driver.find_element(By.XPATH, '//div[4]/div[2]/div[3]/div/div/div/span/div/textarea')
         Description3_3.send_keys("Отредактирован")
         time.sleep(7)
 
         # ОКПД
         driver.find_element(By.CSS_SELECTOR,
-                            "#items-3-okpd > div > div").click()
+                            "div#root div:nth-child(4) > div.form > div:nth-child(4) > div > div > div > span > div > div > div > span").click()
         time.sleep(7)
         OKPD3_3 = driver.find_element(By.XPATH,
-                                      "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/div/form/div[1]/div[2]/div/div[4]/div[2]/div[4]/div/div/div/span/div/div/div/div/div/div/div/div/input")
+                                      "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[4]/div[2]/div[4]/div/div/div/span/div/div/div/div/div/div/div/div/input")
 
+        OKPD3_3.click()
         OKPD3_3.send_keys("22.29.25.000")
         time.sleep(3)
         OKPD3_3.send_keys(Keys.RETURN)
 
         # Заполнение поля: "Цена за единицу"
-        Count3_3 = driver.find_element(By.CSS_SELECTOR, '[id=items-3-cost]')
+        Count3_3 = driver.find_element(By.XPATH, '//div[4]/div[2]/div[5]/div/div/div/div/span/div/input')
         Count3_3.send_keys("100")
 
         # Заполнение поля: "Единица измерения"
-        driver.find_element(By.XPATH,
-                            "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/div/form/div[1]/div[2]/div/div[4]/div[2]/div[5]/div[2]/div/div/div/span/div").click()
+        driver.find_element(By.CSS_SELECTOR,
+                            "div#root div:nth-child(4) > div.form > div:nth-child(5) > div:nth-child(2) > div > div > div > span > div > span").click()
         time.sleep(3)
         UNIT3_3 = driver.find_element(By.XPATH,
-                                      "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/div/form/div[1]/div[2]/div/div[4]/div[2]/div[5]/div[2]/div/div/div/span/div/div/div/div/div/div/input")
+                                      "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div[4]/div[2]/div[5]/div[2]/div/div/div/span/div/div/div/div/div/div/input")
         time.sleep(1)
         UNIT3_3.send_keys('Штука')
         time.sleep(1)
