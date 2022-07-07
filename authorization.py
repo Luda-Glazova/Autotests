@@ -37,7 +37,7 @@ class Authorization:
     # Авторизация
     def login(self, email, password):
         #self.assertIn(u"Авторизация", self.chromedriver.title)
-        assert u"Авторизация" in self.chromedriver.title
+        #assert u"Авторизация" in self.chromedriver.title
         elem = self.chromedriver.find_elements(By.CSS_SELECTOR, '[type="text"][class="ant-input ant-input-lg"]')
         elem[0].send_keys(email)
         elem1 = self.chromedriver.find_element(By.CSS_SELECTOR, '[type="password"][class="ant-input ant-input-lg"]')

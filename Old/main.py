@@ -6,9 +6,11 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from lib2to3.pgen2 import driver
 from links import *
 from authorization import *
 from edit_trades import *
+from bets import *
 from buttons import *
 from change_status import *
 import json
@@ -43,32 +45,26 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_create_trade1(self):
         # Запуск Chromedriver
-        #driver = self.cd
+        driver = self.cd
         _links = Links
         _buttons = Buttons
         _edit_trades = Edit_trades
         _edit_constructor = Edit_constructor
         _change_status = Change_status
-        _authorization = Authorization()
-        driver = _authorization.chromedriver
+        #_authorization = Authorization()
+        #driver = _authorization.chromedriver
         _trade_links = {}
+        _bets = Bets
 
         # Открытие страницы авторизации
         self.Open_Login_Page(driver)
 
         # Авторизация под glazovaft@yandex.ru
-        self.Login(driver, email='glazovaft@yandex.ru', password='Password123#')
-        driver.get("https://stage.www.vtbconnect.ru/trade/3612")
+        self.Login(driver, email='glazovaft5@yandex.ru', password='Password123#')
+        driver.get("https://stage.www.vtbconnect.ru/trade/3661")
         time.sleep(2)
-        driver.find_element(By.CSS_SELECTOR, '#root > div > div > div > div.sidebar > div > div.ant-layout-sider-children > aside > a').click()
-        time.sleep(2)
-        driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/header/div/div/div[4]/button/div').click()
-        time.sleep(2)
-        driver.find_element(By.CSS_SELECTOR, 'div#gatsby-focus-wrapper button[type="button"].flex.items-center.justify-center.text-n1.border-2.px-6.button-modules--container--267eH.header-modules--exitButton--2sVif.button-modules--secondary--I_OvC').click()
-        time.sleep(3)
-        _authorization.login_ft('glazovaft5@yandex.ru', 'Password123#')
-        driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/header/div/div/div[4]/button/div').click()
-        time.sleep(3)
+        _bets.first_bet_auction_with_price(self, driver)
+        time.sleep(10)
 
     #def test_search_in_python_org(self):
         #current_time = datetime.datetime.now()

@@ -20,6 +20,7 @@ class Edit_trades(object):
     def edit_addresses(self, driver):
         #_links.go_to_trade1(self, driver)
         driver.get(get_trade_number(4))
+        time.sleep(2)
         _buttons.edit_trade(self, driver)
         _edit_constructor.delete_additional_addresses(self, driver)
         _edit_constructor.edit_contact(self, driver)
@@ -28,6 +29,7 @@ class Edit_trades(object):
     def edit_specs(self, driver):
         #_links.go_to_trade5(self, driver)
         driver.get(get_trade_number(5))
+        time.sleep(2)
         _buttons.edit_trade(self, driver)
         _edit_constructor.delete_edit_spec(self, driver)
         _edit_constructor.edit_contact(self, driver)

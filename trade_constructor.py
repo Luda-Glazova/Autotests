@@ -2,7 +2,6 @@ import time
 import datetime
 import unittest
 from datetime import datetime
-
 import pyautogui as pyautogui
 from lib2to3.pgen2 import driver
 from selenium import webdriver
