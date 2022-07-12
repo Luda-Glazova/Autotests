@@ -10,6 +10,7 @@ from lib2to3.pgen2 import driver
 from links import *
 from authorization import *
 from edit_trades import *
+from bets_constructor import *
 from bets import *
 from buttons import *
 from change_status import *
@@ -61,9 +62,9 @@ class PythonOrgSearch(unittest.TestCase):
 
         # Авторизация под glazovaft@yandex.ru
         self.Login(driver, email='glazovaft5@yandex.ru', password='Password123#')
-        driver.get("https://stage.www.vtbconnect.ru/trade/3661")
+        driver.get("https://stage.www.vtbconnect.ru/trade/3673")
         time.sleep(2)
-        _bets.first_bet_auction_with_price(self, driver)
+        _bets.first_bet_for_resell(self, driver)
         time.sleep(10)
 
     #def test_search_in_python_org(self):
