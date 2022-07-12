@@ -37,6 +37,30 @@ class Bets_constructor(object):
         Price = driver.find_element(By.CSS_SELECTOR, 'input#price')
         Price.send_keys("1000")
 
+    # Заполнение поля цена в процентах (первая ставка)
+    def price_bet1_persent(self, driver):
+        Price = driver.find_element(By.CSS_SELECTOR, 'input#price')
+        Price.send_keys(u'\ue009' + u'\ue003')
+        Price.send_keys("10")
+
+    # Заполнение поля цена в процентах (вторая ставка)
+    def price_bet2_persent(self, driver):
+        Price = driver.find_element(By.CSS_SELECTOR, 'input#price')
+        Price.send_keys(u'\ue009' + u'\ue003')
+        Price.send_keys("20")
+
+    # Заполнение поля цена в процентах (первая ставка переторжка)
+    def price_bet1_persent_resell(self, driver):
+        Price = driver.find_element(By.CSS_SELECTOR, 'input#price')
+        Price.send_keys(u'\ue009' + u'\ue003')
+        Price.send_keys("25")
+
+    # Заполнение поля цена в процентах (вторая ставка переторжка)
+    def price_bet2_persent_resell(self, driver):
+        Price = driver.find_element(By.CSS_SELECTOR, 'input#price')
+        Price.send_keys(u'\ue009' + u'\ue003')
+        Price.send_keys("30")
+
     #Заполнение поля комментарий
     def сomment_bet(self, driver):
         time.sleep(5)

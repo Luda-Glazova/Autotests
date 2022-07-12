@@ -62,9 +62,9 @@ class PythonOrgSearch(unittest.TestCase):
 
         # Авторизация под glazovaft@yandex.ru
         self.Login(driver, email='glazovaft5@yandex.ru', password='Password123#')
-        driver.get("https://stage.www.vtbconnect.ru/trade/3673")
+        driver.get("https://stage.www.vtbconnect.ru/trade/3666")
         time.sleep(2)
-        _bets.first_bet_for_resell(self, driver)
+        _bets.second_bet_for_resell_persent(self, driver)
         time.sleep(10)
 
     #def test_search_in_python_org(self):

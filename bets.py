@@ -77,4 +77,43 @@ class Bets(object):
         _bets_constructor.add_file_bet(self, driver)
         _buttons.make_bet(self, driver)
         _buttons.cancel_first_bet(self, driver)
+        _bets_constructor.modal_window_first_bet(self, driver)
+
+    # Первая ставка процентная(процент,коммент и файл)
+    def first_bet_for_all_persent(self, driver):
+        _bets_constructor.сomment_bet(self, driver)
+        _bets_constructor.price_bet1_persent(self, driver)
+        _buttons.load_kp_before_bet(self, driver)
+        _bets_constructor.add_file_bet(self, driver)
+        _buttons.make_bet(self, driver)
+        _bets_constructor.modal_window_first_bet(self, driver)
+
+    # Вторая ставка процентная(процент,коммент и файл)
+    def second_bet_for_all_persent(self, driver):
+        _bets_constructor.сomment_bet(self, driver)
+        _bets_constructor.price_bet2_persent(self, driver)
+        _buttons.load_kp_before_bet(self, driver)
+        _bets_constructor.add_file_bet(self, driver)
+        _buttons.make_bet(self, driver)
+        _buttons.cancel_first_bet(self, driver)
         _bets_constructor.modal_window_second_bet(self, driver)
+
+    # Первая ставка процентная для переторжки(процент,коммент и файл)
+    def first_bet_for_resell_persent(self, driver):
+        _bets_constructor.сomment_bet(self, driver)
+        _bets_constructor.price_bet1_persent_resell(self, driver)
+        _buttons.load_kp_before_bet(self, driver)
+        _bets_constructor.add_file_bet(self, driver)
+        _buttons.make_bet(self, driver)
+        _buttons.cancel_first_bet(self, driver)
+        _bets_constructor.modal_window_first_bet(self, driver)
+
+    # Вторая ставка процентная для переторжки(процент,коммент и файл)
+    def second_bet_for_resell_persent(self, driver):
+        _bets_constructor.сomment_bet(self, driver)
+        _bets_constructor.price_bet2_persent_resell(self, driver)
+        _buttons.load_kp_before_bet(self, driver)
+        _bets_constructor.add_file_bet(self, driver)
+        _buttons.make_bet(self, driver)
+        _buttons.cancel_first_bet(self, driver)
+        _bets_constructor.modal_window_first_bet(self, driver)
